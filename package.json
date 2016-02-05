@@ -1,0 +1,18 @@
+{
+    "version": "1.0.0",
+    "name": "phantomjs2x_coffee_sample",
+    "description": "Run PhantomJS v2.x with CoffeeScript",
+    "license": "MIT",
+    "dependencies": {
+        "phantomjs": "2.1.1",
+        "casperjs": "1.1.0-beta4"
+    },
+    "devDependencies": {
+        "coffee-script": "1.10.0"
+    },
+    "scripts": {
+        "pretest": "npm install && coffee --compile **/*.coffee",
+        "test": "casperjs test --fail-fast script/*.js",
+        "posttest": "find ./logs/capture -name '*.png' -mtime +7 -delete"
+    }
+}
