@@ -13,6 +13,8 @@
     "scripts": {
         "pretest": "npm install && coffee --compile **/*.coffee",
         "test": "casperjs test --fail-fast script/*.js",
-        "posttest": "find ./logs/capture -name '*.png' -mtime +7 -delete"
+        "posttest": "npm run purge_outdated_captures",
+        "purge_outdated_captures": "find logs/capture -name '*.png' -mtime +7 -delete",
+        "watch": "coffee --watch --compile **/*.coffee"
     }
 }
